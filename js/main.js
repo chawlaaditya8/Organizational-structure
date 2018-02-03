@@ -105,6 +105,7 @@ root.addEventListener('click', handleClick);
 function init(marker = 0){
     fetch('../data.json')
     .then(response => response.json())
+    .then(data => data.data)
     .then(data => {
         if(marker == localStorage.getItem("marker")){
             marker = data.find(x => x.Id == marker);
