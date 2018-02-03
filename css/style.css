@@ -1,0 +1,47 @@
+body {
+    width:100%;
+    height:100px;
+    overflow-x:scroll;
+    white-space: nowrap;
+}
+
+.card {
+    border: 1px solid #ececec;
+    width: 250px;
+    margin: 0 auto;
+    box-shadow: 1px 1px #f2f2f2;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.team {
+    background-color: #1d8989;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.activeTeam {
+    background-color: #1d895c;
+}
+
+.name {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#main{
+    text-align: center;
+}
+
+.members {
+    display: flex;
+}
+
+.members span {
+    flex: 1;
+}
