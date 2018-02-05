@@ -103,10 +103,28 @@ root.addEventListener('click', handleClick);
 
 // initializing the tree
 function init(marker = 0){
-    fetch('../data.json')
-    .then(response => response.json())
-    .then(data => data.data)
-    .then(data => {
+
+data = [
+    {"Id": 1,"Name": "I am the 1","team": "Company","title": "","Parent": "","root": "true", "depth": 0},
+    {"Id": 2,"Name": "child of 1","team": "Rentomojo","title": "CEO","Parent": 1, "depth": 1},
+    {"Id": 3,"Name": "child of 2","team": "Core Management","title": "CXO","Parent": 2, "depth": 2},
+    {"Id": 4,"Name": "child of 2","team": "Core Management","title": "CFO","Parent": 2, "depth": 2},
+    {"Id": 5,"Name": "child of 2","team": "Core Management","title": "EA","Parent": 2, "depth": 2},
+    {"Id": 6,"Name": "child of 2","team": "KYC","title": "EA","Parent": 2, "depth": 2},
+    {"Id": 7,"Name": "child of 3","team": "Finance & Accounts","title": "Head-Accounts & Payments","Parent": 3, "depth": 3},
+    {"Id": 8,"Name": "child of 4","team": "Finance & Accounts","title": "Head-Accounts & Payments","Parent": 4, "depth": 3},
+    {"Id": 9,"Name": "child of 5","team": "Finance & Accounts","title": "Head-Accounts & Payments","Parent": 5, "depth": 3},
+    {"Id": 10,"Name": "child of 5","team": "Finance & Accounts","title": "Head-Accounts & Payments","Parent": 5, "depth": 3},
+    {"Id": 11,"Name": "child of 6","team": "Finance & Accounts","title": "Head-Accounts & Payments","Parent": 6, "depth": 3},
+    {"Id": 12,"Name": "child of 8","team": "Finance & Accounts","title": "Head-Accounts & Payments","Parent": 8, "depth": 4}
+];
+
+// imitating get request
+
+    // fetch('../data.json')
+    // .then(response => response.json())
+    // .then(data => data.data)
+    // .then(data => {
         if(marker == localStorage.getItem("marker")){
             marker = data.find(x => x.Id == marker);
             if(marker.Parent != ""){
@@ -118,7 +136,7 @@ function init(marker = 0){
             localStorage.setItem("marker", marker);
             return respawn(data, marker);
         }
-    });
+    // });
 }
 
 let marker = localStorage.getItem("marker") || 1;
